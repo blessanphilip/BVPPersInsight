@@ -87,7 +87,7 @@ $(document).ready(function() {
 	      url: '/api/profile',
 	      dataType: 'json',
 	      success: function(response) {
-	        $loading.hide();
+	      //  $loading.hide();
 
 	        if (response.error) {
 	          showError(response.error);
