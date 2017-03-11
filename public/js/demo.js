@@ -71,39 +71,7 @@ $(document).ready(function() {
    * 2. Call the API
    * 3. Call the methods to display the results
    */
-  
-  $('.test-btn').click(function(){
-	  
-	  $.ajax({
-	      headers:{
-	        'csrf-token': $('meta[name="ct"]').attr('content')
-	      },
-	      type: 'POST',
-	      data: {
-	        recaptcha: recaptcha,
-	        text: $content.val(),
-	        language: language
-	      },
-	      url: '/api/profile',
-	      dataType: 'json',
-	      success: function(response) {
-	        $loading.hide();
-
-	        if (response.error) {
-	          showError(response.error);
-	        } else {
-	          $results.show();
-	          showTraits(response);
-	          showTextSummary(response);
-	          showVizualization(response);
-	        }
-
-	      }
-	   
-  });
-  
-  
-  
+ 
   
   $('.analysis-btn').click(function(){
     $('.analysis-btn').blur();
